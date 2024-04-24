@@ -18,46 +18,78 @@ html {
     background-position: 50% 50%;
 }
 
-.content {
-    position: relative;
-    z-index: 10;
+.navbar {
+    background: linear-gradient(270deg, #6a3093, #a044ff, #6a3093);
+    background-size: 600% 600%;
+    animation: gradientAnimation 30s ease infinite;
+    /* Increased from 15s to 30s for a slower effect */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(106, 48, 147, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    flex-grow: 1;
     color: white;
-    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    /* Glow effect on hover */
+    color: #ffffff;
+}
+
+.content {
     padding-top: 60px;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    position: relative;
     max-width: 800px;
     margin: auto;
 }
 
-.section {
-    margin-top: 20px;
-    padding: 40px 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
+.footer {
     background-color: #300080;
     text-align: center;
+    padding: 10px 20px;
     position: fixed;
+    bottom: 0;
     width: 100%;
-    top: 0;
-    z-index: 1000;
-    animation: slideDown 0.5s;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
 
-.dropbtn {
-    background-color: #300080;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+    50% {
+        background-position: 100% 50%;
+    }
 
-.dropdown
+    100% {
+        background-position: 0% 50%;
+    }
+}

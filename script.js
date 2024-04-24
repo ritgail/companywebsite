@@ -49,7 +49,7 @@ particlesJS("particles-js", {
         },
         "move": {
             "enable": true,
-            "speed": 6,
+            "speed": 2, // Controling the spped of animation.
             "direction": "none",
             "random": false,
             "straight": false,
@@ -66,11 +66,11 @@ particlesJS("particles-js", {
         "detect_on": "canvas",
         "events": {
             "onhover": {
-                "enable": true,
+                "enable": false, // Disabled hover effects
                 "mode": "repulse"
             },
             "onclick": {
-                "enable": true,
+                "enable": false, // Optionally disable click effects as well
                 "mode": "push"
             },
             "resize": true
