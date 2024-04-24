@@ -5,33 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Miogenlogic</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .typing-animation {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            /* The cursor */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            width: 0;
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <div id="particles-js"></div>
-    <div class="navbar">
-        <a href="#" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg"
-                alt="Miogenlogic Logo" class="logo-img">Miogenlogic</a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#expertise">Our Expertise</a>
-            <a href="#team">Our Team</a>
-            <a href="#consulting">Consulting Services</a>
-            <a href="#commitment">Our Commitment</a>
+<body class="bg-blue-900 text-white">
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-[-10]"></div>
+    <nav class="fixed top-0 left-0 w-full z-30 bg-blue-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center text-white no-underline">
+                        <img src="mio_test_logo.svg" alt="Miogenlogic Logo" class="h-8 mr-3">
+                        <span class="font-semibold text-xl tracking-tight">Miogenlogic</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#expertise" class="px-3 py-2 rounded-md text-sm font-medium">Our Expertise</a>
+                    <a href="#team" class="px-3 py-2 rounded-md text-sm font-medium">Our Team</a>
+                    <a href="#consulting" class="px-3 py-2 rounded-md text-sm font-medium">Consulting Services</a>
+                    <a href="#commitment" class="px-3 py-2 rounded-md text-sm font-medium">Our Commitment</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-white hover:text-gray-300 focus:outline-none focus:text-white">
+                        <!-- Insert hamburger icon here for mobile menu -->
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <h1>Welcome to Miogenlogic</h1>
-        <p>Discover our cutting-edge solutions in telecommunications and AI.</p>
-    </div>
-    <!-- Additional sections would go here -->
-    <div class="footer">
-        <p>Miogenlogic - Innovate. Transform. Succeed.</p>
-    </div>
-    <script src="script.js"></script>
+    </nav>
+    <section class="text-center py-20 px-4 md:px-0 mt-16 min-h-[100vh]">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Innovating Tomorrow's Digital Landscape</h1>
+            <p class="text-xl md:text-2xl">Welcome to Miogenlogic, your trusted partner in the ever-evolving realm of
+                Information and Communication Technology.</p>
+        </div>
+    </section>
+    <!-- Additional content here -->
+    <footer class="bg-blue-800 text-white p-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <p class="font-semibold text-lg">Miogenlogic - Innovate. Transform. Succeed.</p>
+                <p>Address: New Town, Kolkata, West Bengal, India</p>
+                <p>Email: <a href="mailto:contact@miogenlogic.com" class="underline">contact@miogenlogic.com</a></p>
+            </div>
+            <div class="flex mt-4 md:mt-0">
+                <a href="https://facebook.com" class="mx-2"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://twitter.com" class="mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://linkedin.com" class="mx-2"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                <a href="https://instagram.com" class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>
 </body>
 
 </html>

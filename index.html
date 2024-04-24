@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Miogenlogic</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- ... -->
+    <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .typing-animation {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            /* The cursor */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            width: 0;
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-blue-900 text-white">
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-[-10]">
+        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <nav class="fixed top-0 left-0 w-full z-30 bg-blue-800 shadow">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <!-- Logo and branding -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center text-white no-underline">
+                        <img src="mio_test_logo.svg" alt="Miogenlogic Logo" class="h-8 mr-3">
+                        <span class="font-semibold text-xl tracking-tight">Miogenlogic</span>
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()"
+                        class="text-white hover:text-gray-300 focus:outline-none focus:text-white">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex md:space-x-4 md:ml-auto">
+                    <a href="#home" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#expertise" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Expertise</a>
+                    <a href="#team" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Team</a>
+                    <a href="#consulting" class="text-white px-3 py-2 rounded-md text-sm font-medium">Consulting
+                        Services</a>
+                    <a href="#commitment" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Commitment</a>
+                </div>
+                <!-- Collapsible menu for mobile -->
+                <div id="mobile-menu" class="md:hidden absolute right-0 top-full w-full bg-blue-800 shadow-lg hidden">
+                    <a href="#home" class="block px-3 py-2 text-white text-sm">Home</a>
+                    <a href="#expertise" class="block px-3 py-2 text-white text-sm">Our Expertise</a>
+                    <a href="#team" class="block px-3 py-2 text-white text-sm">Our Team</a>
+                    <a href="#consulting" class="block px-3 py-2 text-white text-sm">Consulting Services</a>
+                    <a href="#commitment" class="block px-3 py-2 text-white text-sm">Our Commitment</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="text-center py-20 px-4 md:px-0 mt-16 min-h-[100vh]">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Innovating Tomorrow's Digital Landscape</h1>
+            <p class="text-xl md:text-2xl">Welcome to Miogenlogic, your trusted partner in the ever-evolving
+                realm of Information and Communication Technology. At Miogenlogic, we take pride in being at the
+                forefront of
+                innovation, committed to delivering cutting-edge solutions in Web-Based Application Development, Android
+                and iOS App
+                Development, AI-based products and services, and Telecommunication domain products.
+            </p>
+        </div>
+    </section>
+
+
+
+    <div class="relative z-10 min-h-screen flex flex-col justify-center items-center">
+        <ul class="w-full">
+            <!-- Each block fills the viewport and has vertical margin -->
+            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
+                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('web.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <i class="fas fa-cloud fa-3x text-white"></i>
+                <h3 class="text-white text-3xl font-bold">Web-Based Application Development and Maintenance</h3>
+                <p class="text-white">Specializing in crafting robust and scalable web applications...</p>
+            </li>
+
+            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
+                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('mobile.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <i class="fas fa-mobile-alt fa-3x"></i>
+                <h3 class="text-white font-bold text-3xl">Mobile App Development</h3>
+                <p class="text-white">In the era of mobile technology, Miogenlogic stands out as a leader in Android and
+                    iOS
+                    app development.</p>
+            </li>
+
+            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
+                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('ai.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <i class="fas fa-brain fa-3x"></i>
+                <h3 class="text-white font-bold text-3xl">AI-Based Products and Services</h3>
+                <p class="text-white">Embrace the future with Miogenlogic's AI-based products and services.</p>
+            </li>
+
+            <li class="min-h-screen flex flex-col justify-center items-center p-4"
+                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('telecomanalytics.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <h3 class="text-white font-bold text-3xl">Telecommunication Domain Products</h3>
+                <p class="text-white">Introducing cutting-edge solutions like MioTest for network testing and analytics.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="bg-blue-900 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Our Team Section -->
+            <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
+                <h2 class="text-2xl font-bold mb-4">Our Team</h2>
+                <p>Miogenlogic boasts a talented and diverse team of professionals dedicated to excellence.</p>
+                <ul class="list-disc pl-5 mt-4">
+                    <li><strong>Product Managers:</strong> Guiding our projects with strategic vision and industry
+                        expertise.</li>
+                    <li><strong>Product Team:</strong> Executing projects with precision and innovation.</li>
+                    <li><strong>UX/UI Designers:</strong> Crafting intuitive and visually appealing user experiences.
+                    </li>
+                    <li><strong>Product Developers:</strong> Bringing ideas to life with advanced technical skills.</li>
+                    <li><strong>Backend and Frontend Developers:</strong> Ensuring the seamless integration and
+                        functionality of applications.</li>
+                    <li><strong>Android and iOS Developers:</strong> Creating mobile solutions that stand out in the app
+                        ecosystem.</li>
+                </ul>
+            </section>
+
+            <!-- Consulting Services Section -->
+            <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
+                <h2 class="text-2xl font-bold mb-4">Consulting Services</h2>
+                <p>We go beyond merely creating solutions; we deliver strategic insights. Our consulting services equip
+                    businesses with the
+                    essential guidance required to successfully maneuver through the ever-changing technological
+                    landscape, guaranteeing
+                    superior outcomes and solutions that stand the test of time</p>
+            </section>
+
+            <!-- Our Commitment Section -->
+            <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg text-white">
+                <h2 class="text-2xl font-bold mb-4">Our Commitment</h2>
+                <p>We are committed in staying at the forefront of technology. We embrace the latest and
+                    cutting-edge tools and methodologies to deliver solutions that stand out in an ever-evolving digital
+                    landscape. Trust us to transform your ideas into reality, whether you're seeking software
+                    development,
+                    mobile app solutions, or AI-based innovations. Join us on the journey to redefine possibilities in
+                    the
+                    digital world.
+            </section>
+        </div>
+    </div>
+
+
+    <footer class="bg-blue-800 text-white p-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <p class="font-semibold text-lg">Miogenlogic - Innovate. Transform. Succeed.</p>
+                <p>New Town, Kolkata, West Bengal, India</p>
+                <p>Email: <a href="mailto:contact@miogenlogic.com" class="underline">contact@miogenlogic.com</a></p>
+            </div>
+            <div class="flex mt-4 md:mt-0">
+                <a href="https://facebook.com" class="mx-2"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://twitter.com" class="mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://linkedin.com" class="mx-2"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                <a href="https://instagram.com" class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.typing-animation');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect();
+                if (position.top >= 0 && position.bottom <= window.innerHeight) {
+                    el.classList.add('typing');
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
