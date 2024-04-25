@@ -356,16 +356,16 @@
     <script>
         const items = document.querySelectorAll('#expertise li');
         let current = 0; // Start with the first item visible
-        items[current].classList.add('opacity-100'); // Set the initial item visible
+        items[current].classList.add('opacity-80'); // Set the initial item visible
 
         async function fadeOut(element) {
-            element.classList.remove('opacity-100');
+            element.classList.remove('opacity-80');
             await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for fade out to complete
         }
 
         async function fadeIn(element) {
             await new Promise(resolve => setTimeout(resolve, 200)); // Minor delay before fade in starts
-            element.classList.add('opacity-100');
+            element.classList.add('opacity-80');
         }
 
         function changeItem() {
