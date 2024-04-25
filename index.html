@@ -43,6 +43,10 @@
                 border-color: white;
             }
         }
+
+        #mobile-menu.hidden {
+            display: none;
+        }
     </style>
     <style>
         #expertise li {
@@ -68,40 +72,54 @@
     <nav class="fixed top-0 left-0 w-full z-30 bg-blue-800 shadow">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
-                <!-- Logo and branding -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center text-white no-underline">
-                        <img src="mio_test_logo.svg" alt="Miogenlogic Logo" class="h-8 mr-3">
-                        <span class="font-semibold text-xl tracking-tight">Miogenlogic</span>
-                    </a>
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="flex items-center flex-shrink-0">
+                        <!-- Ensure the container is flex and items are aligned center -->
+                        <a href="#" class="flex items-center text-white no-underline">
+                            <img src="mio_test_logo.svg" alt="Miogenlogic Logo" class="h-8 mr-3">
+                            <!-- Logo with right margin -->
+                            <span class="text-xl font-medium">Miogenlogic</span>
+                            <!-- Optional: Control font size and weight -->
+                        </a>
+                    </div>
                 </div>
-                <!-- Mobile menu button -->
+
                 <div class="md:hidden">
-                    <button onclick="toggleMenu()"
-                        class="text-white hover:text-gray-300 focus:outline-none focus:text-white">
+                    <button id="menu-toggle" class="text-white hover:text-gray-300 focus:outline-none focus:text-white">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
                 </div>
-                <!-- Navigation Links -->
-                <div class="hidden md:flex md:space-x-4 md:ml-auto">
-                    <a href="#home" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="#expertise" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Expertise</a>
-                    <a href="#team" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Team</a>
-                    <a href="#consulting" class="text-white px-3 py-2 rounded-md text-sm font-medium">Consulting
-                        Services</a>
-                    <a href="#commitment" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Commitment</a>
+                <div class="hidden md:block">
+                    <div class="flex space-x-4">
+                        <a href="#home" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#expertise" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our
+                            Expertise</a>
+                        <a href="#team" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our Team</a>
+                        <a href="#consulting" class="text-white px-3 py-2 rounded-md text-sm font-medium">Consulting
+                            Services</a>
+                        <a href="#commitment" class="text-white px-3 py-2 rounded-md text-sm font-medium">Our
+                            Commitment</a>
+                    </div>
                 </div>
-                <!-- Collapsible menu for mobile -->
-                <div id="mobile-menu" class="md:hidden absolute right-0 top-full w-full bg-blue-800 shadow-lg hidden">
-                    <a href="#home" class="block px-3 py-2 text-white text-sm">Home</a>
-                    <a href="#expertise" class="block px-3 py-2 text-white text-sm">Our Expertise</a>
-                    <a href="#team" class="block px-3 py-2 text-white text-sm">Our Team</a>
-                    <a href="#consulting" class="block px-3 py-2 text-white text-sm">Consulting Services</a>
-                    <a href="#commitment" class="block px-3 py-2 text-white text-sm">Our Commitment</a>
+                <div id="mobile-menu" class="hidden absolute right-0 top-full mt-2 w-full bg-blue-800 shadow-lg z-50">
+                    <a href="#home" class="block px-3 py-2 text-white text-sm"
+                        onclick="navigateToSection('#home')">Home</a>
+                    <a href="#expertise" class="block px-3 py-2 text-white text-sm"
+                        onclick="navigateToSection('#expertise')">Our
+                        Expertise</a>
+                    <a href="#team" class="block px-3 py-2 text-white text-sm" onclick="navigateToSection('#team')">Our
+                        Team</a>
+                    <a href="#consulting" class="block px-3 py-2 text-white text-sm"
+                        onclick="navigateToSection('#consulting')">Consulting Services</a>
+                    <a href="#commitment" class="block px-3 py-2 text-white text-sm"
+                        onclick="navigateToSection('#commitment')">Our
+                        Commitment</a>
                 </div>
+
             </div>
         </div>
     </nav>
+
 
     <section id="home" class="text-center py-20 px-4 md:px-0 mt-16 min-h-[100vh]">
         <div class="max-w-6xl mx-auto">
@@ -140,6 +158,7 @@
             </li>
             <li class="absolute inset-0 flex flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-700"
                 style="background-image: url('telecomanalytics.webp'); background-color: rgba(10, 32, 77, 0.75);">
+                <i class="fas fa-chart-line fa-3x"></i>
                 <h3 class="text-3xl font-bold">Telecommunication Domain Products</h3>
                 <p>Introducing cutting-edge solutions like MioTest for network testing and analytics.</p>
             </li>
@@ -147,7 +166,7 @@
     </div>
 
     <div class="bg-blue-900 py-12 px-4">
-        <div id="team" class="max-w-6xl mx-auto">
+        <div id="team" class="max-w-6xl mx-auto pt-16 md:pt-20 lg:pt-24">
             <!-- Our Team Section -->
             <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
                 <h2 class="text-2xl font-bold mb-4">Our Team</h2>
@@ -167,7 +186,8 @@
             </section>
 
             <!-- Consulting Services Section -->
-            <section id="consulting" class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
+            <section id="consulting"
+                class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white pt-16 md:pt-20 lg:pt-24">
                 <h2 class="text-2xl font-bold mb-4">Consulting Services</h2>
                 <p>We go beyond merely creating solutions; we deliver strategic insights. Our consulting services equip
                     businesses with the
@@ -177,7 +197,8 @@
             </section>
 
             <!-- Our Commitment Section -->
-            <section id="commitment" class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg text-white">
+            <section id="commitment"
+                class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg text-white pt-16 md:pt-20 lg:pt-24">
                 <h2 class="text-2xl font-bold mb-4">Our Commitment</h2>
                 <p>We are committed in staying at the forefront of technology. We embrace the latest and
                     cutting-edge tools and methodologies to deliver solutions that stand out in an ever-evolving digital
@@ -377,6 +398,41 @@
         }
 
         setInterval(changeItem, 8000); // Change items every 5 seconds
+    </script>
+    <!-- <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script> -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden'); // This toggles the visibility of the menu
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+
+        function navigateToSection(sectionId) {
+            const section = document.querySelector(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+            toggleMenu(); // Close the mobile menu after clicking
+        }
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default anchor click behavior
+                const targetSection = this.getAttribute('href');
+                navigateToSection(targetSection);
+                toggleMenu();
+            });
+        });
     </script>
 
 
