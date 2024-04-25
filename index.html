@@ -44,6 +44,20 @@
             }
         }
     </style>
+    <style>
+        #expertise li {
+            background-size: cover;
+            /* Cover the entire area of each li */
+            background-repeat: no-repeat;
+            /* Do not repeat the background */
+            background-position: center;
+            /* Center the background */
+            background-blend-mode: multiply;
+            /* Blend mode for background */
+            transition: opacity 2s ease-in-out;
+            /* Smooth transition for the opacity */
+        }
+    </style>
 
 </head>
 
@@ -89,7 +103,7 @@
         </div>
     </nav>
 
-    <section class="text-center py-20 px-4 md:px-0 mt-16 min-h-[100vh]">
+    <section id="home" class="text-center py-20 px-4 md:px-0 mt-16 min-h-[100vh]">
         <div class="max-w-6xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Innovating Tomorrow's Digital Landscape</h1>
             <p class="text-xl md:text-2xl">Welcome to Miogenlogic, your trusted partner in the ever-evolving
@@ -102,48 +116,38 @@
         </div>
     </section>
 
-
-
-    <div class="relative z-10 min-h-screen flex flex-col justify-center items-center">
-        <ul class="w-full">
-            <!-- Each block fills the viewport and has vertical margin -->
-            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
-                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('web.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <i class="fas fa-cloud fa-3x text-white"></i>
-                <h3 class="text-white text-3xl font-bold">Web-Based Application Development and Maintenance</h3>
-                <p class="text-white">Specializing in crafting robust and scalable web applications...</p>
+    <div id="expertise" class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
+        <ul class="w-full h-full">
+            <li class="absolute inset-0 flex flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-700"
+                style="background-image: url('web.webp'); background-color: rgba(10, 32, 77, 0.75);">
+                <i class="fas fa-cloud fa-3x"></i>
+                <h3 class="text-3xl font-bold">Web-Based Application Development and Maintenance</h3>
+                <p>Specializing in crafting robust and scalable web applications...</p>
             </li>
-
-            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
-                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('mobile.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <li class="absolute inset-0 flex flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-700"
+                style="background-image: url('mobile.webp'); background-color: rgba(10, 32, 77, 0.75);">
                 <i class="fas fa-mobile-alt fa-3x"></i>
-                <h3 class="text-white font-bold text-3xl">Mobile App Development</h3>
-                <p class="text-white">In the era of mobile technology, Miogenlogic stands out as a leader in Android and
-                    iOS
-                    app development.</p>
-            </li>
-
-            <li class="min-h-screen flex flex-col justify-center items-center p-4 mb-8"
-                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('ai.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <i class="fas fa-brain fa-3x"></i>
-                <h3 class="text-white font-bold text-3xl">AI-Based Products and Services</h3>
-                <p class="text-white">Embrace the future with Miogenlogic's AI-based products and services.</p>
-            </li>
-
-            <li class="min-h-screen flex flex-col justify-center items-center p-4"
-                style="background: linear-gradient(rgba(10, 32, 77, 0.75), rgba(10, 32, 77, 0.75)), url('telecomanalytics.webp'); background-blend-mode: multiply; background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <h3 class="text-white font-bold text-3xl">Telecommunication Domain Products</h3>
-                <p class="text-white">Introducing cutting-edge solutions like MioTest for network testing and analytics.
+                <h3 class="text-3xl font-bold">Mobile App Development</h3>
+                <p>In the era of mobile technology, Miogenlogic stands out as a leader in Android and iOS app
+                    development.
                 </p>
+            </li>
+            <li class="absolute inset-0 flex flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-700"
+                style="background-image: url('ai.webp'); background-color: rgba(10, 32, 77, 0.75);">
+                <i class="fas fa-brain fa-3x"></i>
+                <h3 class="text-3xl font-bold">AI-Based Products and Services</h3>
+                <p>Embrace the future with Miogenlogic's AI-based products and services.</p>
+            </li>
+            <li class="absolute inset-0 flex flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-700"
+                style="background-image: url('telecomanalytics.webp'); background-color: rgba(10, 32, 77, 0.75);">
+                <h3 class="text-3xl font-bold">Telecommunication Domain Products</h3>
+                <p>Introducing cutting-edge solutions like MioTest for network testing and analytics.</p>
             </li>
         </ul>
     </div>
 
-
-
-
     <div class="bg-blue-900 py-12 px-4">
-        <div class="max-w-6xl mx-auto">
+        <div id="team" class="max-w-6xl mx-auto">
             <!-- Our Team Section -->
             <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
                 <h2 class="text-2xl font-bold mb-4">Our Team</h2>
@@ -163,7 +167,7 @@
             </section>
 
             <!-- Consulting Services Section -->
-            <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
+            <section id="consulting" class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg mb-6 text-white">
                 <h2 class="text-2xl font-bold mb-4">Consulting Services</h2>
                 <p>We go beyond merely creating solutions; we deliver strategic insights. Our consulting services equip
                     businesses with the
@@ -173,7 +177,7 @@
             </section>
 
             <!-- Our Commitment Section -->
-            <section class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg text-white">
+            <section id="commitment" class="bg-blue-800 bg-opacity-75 p-6 rounded-lg shadow-lg text-white">
                 <h2 class="text-2xl font-bold mb-4">Our Commitment</h2>
                 <p>We are committed in staying at the forefront of technology. We embrace the latest and
                     cutting-edge tools and methodologies to deliver solutions that stand out in an ever-evolving digital
@@ -193,6 +197,7 @@
                 <p class="font-semibold text-lg">Miogenlogic - Innovate. Transform. Succeed.</p>
                 <p>New Town, Kolkata, West Bengal, India</p>
                 <p>Email: <a href="mailto:contact@miogenlogic.com" class="underline">contact@miogenlogic.com</a></p>
+                <p>CIN- U72900WB2020PTC242148 | GSTIN - 19AAOCM1491N1Z </p>
             </div>
             <div class="flex mt-4 md:mt-0">
                 <a href="https://facebook.com" class="mx-2"><i class="fab fa-facebook-f fa-2x"></i></a>
@@ -290,6 +295,90 @@
         });
 
     </script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                let targetId = this.getAttribute('href');
+                let targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    smoothScrollTo(targetElement.offsetTop, 1000); // 1000 milliseconds = 1 second to scroll
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href="#expertise"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                const expertiseSection = document.querySelector('#expertise');
+                if (!expertiseSection) return; // Check if the section exists
+
+                const itemsContainer = expertiseSection.querySelector('.expertise-items');
+                if (!itemsContainer) return; // Check if the container exists
+
+                const startPos = expertiseSection.offsetTop; // Start position of the expertise section
+                const endPos = startPos + itemsContainer.offsetHeight; // End position after all items
+
+                smoothScrollTo(endPos, 10000); // Scroll through the entire section smoothly
+            });
+        });
+
+        function smoothScrollTo(endPos, duration) {
+            const startPos = window.pageYOffset;
+            const distance = endPos - startPos;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const next = easeInOutQuad(timeElapsed, startPos, distance, duration);
+
+                window.scrollTo(0, next);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+
+
+    </script>
+    <script>
+        const items = document.querySelectorAll('#expertise li');
+        let current = 0; // Start with the first item visible
+        items[current].classList.add('opacity-100'); // Set the initial item visible
+
+        async function fadeOut(element) {
+            element.classList.remove('opacity-100');
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for fade out to complete
+        }
+
+        async function fadeIn(element) {
+            await new Promise(resolve => setTimeout(resolve, 200)); // Minor delay before fade in starts
+            element.classList.add('opacity-100');
+        }
+
+        function changeItem() {
+            const next = (current + 1) % items.length; // Calculate the index of the next item
+            fadeOut(items[current]).then(() => {
+                fadeIn(items[next]);
+                current = next; // Update the current item index
+            });
+        }
+
+        setInterval(changeItem, 8000); // Change items every 5 seconds
+    </script>
+
 
 </body>
 
